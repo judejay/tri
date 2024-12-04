@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import gsap from 'gsap'; // <-- import GSAP
-import { useGSAP } from '@gsap/react'; // <-- import the hook from our React package
+import gsap from 'gsap'; 
+import { useGSAP } from '@gsap/react'; 
 
 gsap.registerPlugin(useGSAP);
 
@@ -9,8 +9,7 @@ export default function App() {
     const container = useRef();
 
     useGSAP(
-        () => {
-            
+        () => {            
             gsap.fromTo('#hi',
               {
                 x:100
@@ -20,11 +19,9 @@ export default function App() {
                 repeat: -1, 
                 yoyo: true,
                 duration: 2,              
-                x: 200,
+                x: 450,
                 y: -50,
-
-              
-              
+                ease: "power2.out"                 
               }); 
         },
         { scope: container }
