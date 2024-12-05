@@ -7,7 +7,6 @@ gsap.registerPlugin(useGSAP);
 
 export default function App() {
    // const container = useRef();
-
     useGSAP(
         () => {            
             gsap.fromTo('.triangle',
@@ -16,30 +15,34 @@ export default function App() {
               },              
               {
                 rotation:180,
-                repeat: -1, 
+                repeat: 2, 
                 yoyo: true,
                 duration: 2,              
-                ease: "power2.out"   ,
+                ease: "power2.out",
                 stagger: 0.5,
-                       
+                onComplete: () => {
+                  gsap.to('.triangle', {
+                    x: 0,
+                    y: 0,
+                    rotation: 0,
+                    duration: 1,
+                    ease: "power2.in",
+                    stagger: 0.2
+                  });
+                }
               }); 
         },[]
        // { scope: container }
     ); 
 
     return (
-      <div className='h-[100vh] flex items-center'>
-
+      <div className='h-[100vh] flex items-center' id='circle'>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
-
-
-
-
         </div>
     );
 }
