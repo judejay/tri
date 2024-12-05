@@ -1,37 +1,44 @@
-import { useRef } from 'react';
-
+//import { useRef } from 'react';
 import gsap from 'gsap'; 
 import { useGSAP } from '@gsap/react'; 
+import './App.css';
 
 gsap.registerPlugin(useGSAP);
 
 export default function App() {
-    const container = useRef();
+   // const container = useRef();
 
     useGSAP(
         () => {            
-            gsap.fromTo('#hi',
+            gsap.fromTo('.triangle',
               {
                 x:100
               },              
               {
-                rotation:360,
+                rotation:180,
                 repeat: -1, 
                 yoyo: true,
                 duration: 2,              
-                x: 450,
-                y: -50,
-                ease: "power2.out"                 
+                ease: "power2.out"   ,
+                stagger: 0.5,
+                       
               }); 
-        },
-        { scope: container }
+        },[]
+       // { scope: container }
     ); 
 
     return (
-        <div ref={container} className="app">
-           <div id="hi" className="text-3xl font-bold underline">            
-                 Hello World!
-           </div>
+      <div className='h-[100vh] flex items-center'>
+
+             <div className="triangle ml-1"></div>
+             <div className="triangle ml-1"></div>
+             <div className="triangle ml-1"></div>
+             <div className="triangle ml-1"></div>
+             <div className="triangle ml-1"></div>
+             <div className="triangle ml-1"></div>
+
+
+
 
         </div>
     );

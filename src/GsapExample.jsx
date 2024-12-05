@@ -13,6 +13,7 @@ useGSAP(() => {
         start: 'top 90%',
       },
       x: 400,
+      y:-40,
       opacity: 1,
       duration: 3,
 
