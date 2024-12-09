@@ -2,6 +2,7 @@
 import gsap from 'gsap'; 
 import { useGSAP } from '@gsap/react'; 
 import './App.css';
+import GsapScrollTrigger from './GsapExample';
 
 gsap.registerPlugin(useGSAP);
 
@@ -36,13 +37,20 @@ export default function App() {
     ); 
 
     return (
-      <div className='h-[100vh] flex items-center' id='circle'>
+
+<>
+<div className=' flex items-center' id='circle'>
+            
+            <section className='h-[100vh] flex items-center justify-center'>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
              <div className="triangle ml-1"></div>
+          </section>
         </div>
+                     <GsapScrollTrigger />
+                     </>
     );
 }
