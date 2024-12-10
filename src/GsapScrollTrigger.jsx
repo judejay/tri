@@ -18,11 +18,15 @@ const GsapScrollTrigger = () => {
 
       boxes.forEach((box) => {
         let rank = boxes.indexOf(box) +1;
+        let sinRank = Math.sin(rank);
+        let cosRank = Math.cos(rank);
+        let tanRank = Math.tan(rank);
         gsap.to(box, {
-          x: 50 * (rank + 4.5),
-          rotation: 360* rank + 180,
+          x: 50 * (sinRank + 4.5),
+          y: 50 * (cosRank + 4.5),
+          rotation: 360* cosRank + 180,
           borderRadius: "100%",
-          scale: 0.5,
+          scale: 0.5 * tanRank,
           scrollTrigger: {
             trigger: box,
             start: "bottom bottom", // when the bottom of the box hits the bottom of the viewport
