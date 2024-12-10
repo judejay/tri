@@ -14,13 +14,15 @@ const GsapScrollTrigger = () => {
     () => {
       // get all the boxes in the scrollRef
       const boxes = gsap.utils.toArray(scrollRef.current.children);
+    
 
       boxes.forEach((box) => {
+        let rank = boxes.indexOf(box) +1;
         gsap.to(box, {
-          x: 150 * (boxes.indexOf(box) + 4.5),
-          rotation: 360,
+          x: 50 * (rank + 4.5),
+          rotation: 360* rank + 1,
           borderRadius: "100%",
-          scale: 1.5,
+          scale: 0.5,
           scrollTrigger: {
             trigger: box,
             start: "bottom bottom", // when the bottom of the box hits the bottom of the viewport
