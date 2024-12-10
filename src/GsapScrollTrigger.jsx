@@ -20,13 +20,13 @@ const GsapScrollTrigger = () => {
         let rank = boxes.indexOf(box) +1;
         gsap.to(box, {
           x: 50 * (rank + 4.5),
-          rotation: 360* rank + 1,
+          rotation: 360* rank + 180,
           borderRadius: "100%",
           scale: 0.5,
           scrollTrigger: {
             trigger: box,
             start: "bottom bottom", // when the bottom of the box hits the bottom of the viewport
-            end: "top 20%", // end when the top of the box hits 20% from the top of the viewport
+            end: "top 10%", // end when the top of the box hits 20% from the top of the viewport
             scrub: true, // scrubbing makes the animation smooth
           },
           ease: "power1.inOut",
