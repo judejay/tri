@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 
 const animations = [
+ 
   {
-    title: "GSAP To",
+    title: "GSAP FromTo",
     description:
-      "The to() method is used to animate a single element from a starting state to an ending state.",
-    path: "/gsapto",
+      "The fromTo() method is used to animate a single element from a starting state to an ending state and back to the starting state.",
+      path: "/gsapfromto",
   },
     {
     title: "GSAP Stagger",
     description:
       "The stagger() method is used to animate multiple elements with a stagger effect.",
-    path: "/gsapstagger",
+    path: "/stagger",
   },
   {
     title: "GSAP ScrollTrigger",
