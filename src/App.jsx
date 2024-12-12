@@ -3,6 +3,10 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react'; 
 import './App.css';
 import GsapScrollTrigger from './GsapScrollTrigger';
+import Stagger from './Stagger';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Arrows from './Arrows';
+import Home from './Home';
 
 gsap.registerPlugin(useGSAP);
 
@@ -38,19 +42,23 @@ export default function App() {
 
     return (
 
-<>
-<div className=' flex items-center' id='circle'>
-            
-            <section className='h-[60vh] flex items-center justify-center'>
-             <div className="triangle ml-1"></div>
-             <div className="triangle ml-1"></div>
-             <div className="triangle ml-1"></div>
-             <div className="triangle ml-1"></div>
-             <div className="triangle ml-1"></div>
-             <div className="triangle ml-1"></div>
-          </section>
-        </div>
-                     <GsapScrollTrigger />
-                     </>
+      <div className="bg-black min-h-screen w-full">
+          <Router>
+            <Routes>
+              <Route path="/gsapto" element={<Arrows />} />              
+              <Route path="/stagger" element={<Stagger />} />
+              <Route path="/gsapscrolltrigger" element={<GsapScrollTrigger />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+
+
+          </Router>
+
+      </div>
+
+
+
+
+                     
     );
 }
