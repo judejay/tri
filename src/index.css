@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-zinc-900 text-zinc-50
+  }
+}
+
 @layer components {
   code {
     @apply font-mono text-sm bg-zinc-900 text-orange-400 p-1
